@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 class Headline extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -20,6 +21,19 @@ class Headline extends Component {
       </div>
     );
   }
+}
+
+Headline.propTypes = {
+  header: PropTypes.string,
+  desc: PropTypes.string,
+  tempArr: PropTypes.arrayOf(PropTypes.shape({
+    fName: PropTypes.string,
+    lName: PropTypes.string,
+    email: PropTypes.string,
+    age: PropTypes.number,
+    onlineStatus: PropTypes.bool,
+  }))
+
 }
 
 export default Headline;
